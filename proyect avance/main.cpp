@@ -8,20 +8,20 @@
 
 using namespace std;
 
-// Estructuras de datos
+
 struct Point {
     int x, y;
     Point(int x = 0, int y = 0) : x(x), y(y) {}
 };
 
 struct Figure {
-    int type; // 0: línea directa, 1: línea DDA, 2: círculo incremental, 3: círculo punto medio, 4: elipse
+    int type; 
     vector<Point> points;
     float color[3];
     int thickness;
 };
 
-// Variables globales
+
 extern int windowWidth;
 extern int windowHeight;
 extern bool showGrid;
@@ -38,7 +38,7 @@ extern vector<Figure> figures;
 extern vector<vector<Figure>> history;
 extern int historyIndex;
 
-// Prototipos de funciones
+
 void drawGrid();
 void drawAxes();
 void drawPixel(int x, int y, float r, float g, float b);
@@ -64,7 +64,7 @@ void exportPPM(const string& filename);
 void showHelpDialog();
 void showAboutDialog();
 
-// Función principal
+
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
@@ -83,8 +83,9 @@ int main(int argc, char** argv) {
     glutMotionFunc(motion);
     glutKeyboardFunc(keyboard);
 
-    glClearColor(1.0, 1.0, 1.0, 1.0); // Fondo blanco
+    glClearColor(1.0, 1.0, 1.0, 1.0); 
     glutMainLoop();
 
     return 0;
 }
+
